@@ -1,8 +1,53 @@
 body {
 	padding: 0;
 	margin: 0;
+	position: relative;
 }
 
 #mapid { 
-	height: 180px; 
+	height: 180px;
+	position: relative;
+}
+
+.title{
+	position: absolute;
+	z-index: 1000;
+	font-weight: bold;
+    font-size: 48px;
+    top: 100px;
+    left: 40px;
+    color: #ededed;
+}
+
+.background-find {
+	position: absolute;
+	z-index: 1000;
+	font-weight: bold;
+    top: 170px;
+    height: 50px;
+    border-radius: 30px;
+    width: 400px;
+    left: 40px;
+    background-color: #cecece;
+    display: flex;
+}
+
+.background-find .find{
+	flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.background-find input{
+	width: 100%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.background-find input:focus {
+	outline: none;
 }
