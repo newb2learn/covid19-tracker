@@ -51,3 +51,15 @@ body {
 .background-find input:focus {
 	outline: none;
 }
+
+.case-list-container {
+    position: absolute;
+    z-index: 1001;
+    top: 240px;
+    left: 50px;
+}
+
+.type-case {
+    font-size: 24px;
+    padding: 10px;
+}
