@@ -29,22 +29,23 @@ get_country = (country) => {
 display_country_list = (country) =>{
 	let storesHtml = ''
 	let list = data["Countries"]
-	var el = document.querySelector('.country-container')
-	if (el) {
-		el.forEach(element => {
-			el.remove()
-		});
-	}
+	// var el = document.querySelector('.country-container')
+	// if (el) {
+	// 	el.forEach(element => {
+	// 		el.remove()
+	// 	});
+	// }
 	 	
 	if(country.length >= 3){
 		for(let [index,data] of list.entries()){
 			let listOfCountry = list[index]["Slug"]
+			let countryCode = list[index]["CountryCode"]
 			if(listOfCountry.includes(country,0)) {
 				storesHtml += `
 				<div class="country-container">
 					<div class="country-container-background">
 						<div class="country-flag">
-							<i class="fa fa-flag-o" aria-hidden="true"></i>
+							<span class="flag-icon flag-icon-${ countryCode.toLowerCase() }"></span>
 						</div>
 						<div class="country-name">
 							<span>${listOfCountry}</span>
