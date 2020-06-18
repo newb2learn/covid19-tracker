@@ -29,13 +29,15 @@ get_country = (country) => {
 display_country_list = (country) =>{
 	let storesHtml = ''
 	let list = data["Countries"]
-	// var el = document.querySelector('.country-container')
-	// if (el) {
-	// 	el.forEach(element => {
-	// 		el.remove()
-	// 	});
-	// }
-	 	
+	var el = document.querySelectorAll('.country-container')
+
+	if(el){
+		console.log(el.length)
+		for(let i = 0; i<el.length; i++){
+			el[i].remove()
+		}
+	}
+    
 	if(country.length >= 3){
 		for(let [index,data] of list.entries()){
 			let listOfCountry = list[index]["Slug"]
@@ -62,7 +64,7 @@ display_country_list = (country) =>{
 	}
 }
 
-document.addEventListener("keyup", () => {
+document.addEventListener("keydown", () => {
 	let countries = document.querySelector("#input_country").value
 	//get_country(countries)
 	display_country_list(countries)
