@@ -52,20 +52,6 @@ body {
 	outline: none;
 }
 
-.case-list-container {
-    position: absolute;
-    z-index: 1001;
-    top: 240px;
-    left: 50px;
-}
-
-.case-list {
-    background-color: #dededec7;
-    border-radius: 30px;
-    width: 380px;
-    padding: 10px;
-}
-
 .type-case {
     font-size: 24px;
     padding: 10px;

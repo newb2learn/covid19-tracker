@@ -4,16 +4,12 @@ let death_case = document.querySelector(".deathcase")
 let recovered_case = document.querySelector(".recoveredcase")
 
 
-async function get_global(country) {
+async function get_global() {
 	let url = 'https://api.covid19api.com/summary'
 	let response = await fetch(url)
 	data = await response.json()
-	console.log("get_global")
-	// new_case.innerText = data[country]["TotalConfirmed"]
-	// death_case.innerText = data[country]["TotalDeaths"]
-	// recovered_case.innerText = data[country]["TotalRecovered"]
 }
-	get_global("Global")
+get_global()
 
 get_country = (country) => {
 	console.log("get_country")
@@ -40,14 +36,14 @@ display_country_list = (country) =>{
     
 	if(country.length >= 3){
 		for(let [index,data] of list.entries()){
-			let listOfCountry = list[index]["Slug"]
-			let countryCode = list[index]["CountryCode"]
+			let listOfCountry = data["Slug"]
+			let countryCode = data["CountryCode"]
 			if(listOfCountry.includes(country,0)) {
 				storesHtml += `
 				<div class="country-container">
 					<div class="country-container-background">
 						<div class="country-flag">
-							<span class="flag-icon flag-icon-${ countryCode.toLowerCase() }"></span>
+							<span class="flag-icon flag-icon-${countryCode.toLowerCase()}"></span>
 						</div>
 						<div class="country-name">
 							<span>${listOfCountry}</span>
@@ -66,6 +62,6 @@ display_country_list = (country) =>{
 
 document.addEventListener("keydown", () => {
 	let countries = document.querySelector("#input_country").value
-	//get_country(countries)
+	get_country(countries)
 	display_country_list(countries)
 })
