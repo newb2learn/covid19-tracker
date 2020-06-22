@@ -79,3 +79,21 @@ body {
 .search-icon {
     color:#e3e3e3
 }
+
+.graph_container {
+    position: absolute;
+    z-index: 1000;
+    width: 500px;
+    bottom: 20px;
+    top: 240px;
+    left: 50px;
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.graph_block {
+    background: black;
+    margin-top: 10px;
+    padding: 40px;
+}

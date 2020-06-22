@@ -37,13 +37,13 @@ navigator.geolocation.getCurrentPosition(function(location) {
 	`<div class="case-list-container">
 		<div class="case-list">
 			<div class="type-case">
-				Confirmed case: <span class="newcase">${data["Global"]["TotalConfirmed"]}</span>
+				Confirmed case: <span class="newcase">${summary_data["Global"]["TotalConfirmed"]}</span>
 			</div>						
 			<div class="type-case">
-				Death case: <span class="deathcase">${data["Global"]["TotalDeaths"]}</span>
+				Death case: <span class="deathcase">${summary_data["Global"]["TotalDeaths"]}</span>
 			</div>						
 			<div class="type-case">
-				Recovered case: <span class="recoveredcase">${data["Global"]["TotalRecovered"]}</span>
+				Recovered case: <span class="recoveredcase">${summary_data["Global"]["TotalRecovered"]}</span>
 			</div>						
 		</div>
 	</div>`
