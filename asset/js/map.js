@@ -21,31 +21,31 @@ navigator.geolocation.getCurrentPosition(function(location) {
 		accessToken: 'pk.eyJ1IjoiYmJyb29rMTU0IiwiYSI6ImNpcXN3dnJrdDAwMGNmd250bjhvZXpnbWsifQ.Nf9Zkfchos577IanoKMoYQ'
 	}).addTo(mymap)
 	set_marker(latlng,mymap)
-  });
+});
 
-  set_marker = (latlng,mymap) => {
+set_marker = (latlng,mymap) => {
 	var marker = L.marker(latlng).addTo(mymap)
 	var popup = L.popup()
-    .setLatLng(latlng)
+	.setLatLng(latlng)
 	.setContent(pop_content())
 
 	marker.bindPopup(popup).openPopup()
-  }
+}
 
-  pop_content = () => {
-	let content = 
-	`<div class="case-list-container">
-		<div class="case-list">
-			<div class="type-case">
-				Confirmed case: <span class="newcase">${summary_data["Global"]["TotalConfirmed"]}</span>
-			</div>						
-			<div class="type-case">
-				Death case: <span class="deathcase">${summary_data["Global"]["TotalDeaths"]}</span>
-			</div>						
-			<div class="type-case">
-				Recovered case: <span class="recoveredcase">${summary_data["Global"]["TotalRecovered"]}</span>
-			</div>						
-		</div>
-	</div>`
-  return content;
-  }
+pop_content = () => {
+let content = 
+`<div class="case-list-container">
+	<div class="case-list">
+		<div class="type-case">
+			Confirmed case: <span class="newcase">${summary_data["Global"]["TotalConfirmed"]}</span>
+		</div>						
+		<div class="type-case">
+			Death case: <span class="deathcase">${summary_data["Global"]["TotalDeaths"]}</span>
+		</div>						
+		<div class="type-case">
+			Recovered case: <span class="recoveredcase">${summary_data["Global"]["TotalRecovered"]}</span>
+		</div>						
+	</div>
+</div>`
+return content;
+}
